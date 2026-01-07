@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../components/ToDoList"
+import "../../styles/index.css"
 
 export const ToDoList = () => {
   const [listaDeTareas, setListaDeTareas] = useState([]);
@@ -33,6 +33,15 @@ export const ToDoList = () => {
     mensaje = `¡Tienes ${cantidadTareas} tareas pendientes!  😭​​​`;
   }
 
+  const color =
+    cantidadTareas >= 8
+      ? "danger"
+      : cantidadTareas >= 5
+        ? "primary"
+        : cantidadTareas >= 1
+          ? "info"
+          : "success";
+
   return (
 
     <div className="app-container d-flex flex-column align-items-center mt-5">
@@ -50,7 +59,7 @@ export const ToDoList = () => {
 
           placeholder="Escribe una tarea"
         />
-        <button className="btn btn-info mt-2" onClick={agregarTarea}>
+        <button className="btn btn-info mt-2 display-6" onClick={agregarTarea}>
           Agregar tarea
         </button>
       </div>
@@ -63,7 +72,7 @@ export const ToDoList = () => {
           >
             {tarea}
 
-            <button data-bs-toggle="modal" data-bs-target={`#modal${indice}`}
+            <button className="cursor" data-bs-toggle="modal" data-bs-target={`#modal${indice}`}
               type="button"
             >
               ❌
@@ -89,7 +98,7 @@ export const ToDoList = () => {
           </li>
         ))}
       </ul>
-      <p className={`mt-2 tareas-texto`}>
+      <p className={`mt-2 text-${color} tareas-texto`}>
         {mensaje}
       </p>
     </div>

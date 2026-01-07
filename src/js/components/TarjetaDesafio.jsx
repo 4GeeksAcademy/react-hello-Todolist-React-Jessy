@@ -1,7 +1,6 @@
 
 
 import React, { useState } from "react";
-import "../../styles/Tarjeta.css";
 
 import deadpool from "../../img/Deadpool.jpg";
 import fondo2 from "../../img/fondo2.jpg";

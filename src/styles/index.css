@@ -1,8 +1,10 @@
-
-.sin-tareas {
-  color: green;
+.list-group-item>button{
+  visibility: hidden;
 }
 
-.con-tareas {
-  color: #0dcaf0; /* mismo celeste del botón */
+.list-group-item:hover>button{
+  visibility: visible;
 }
+
+
+
